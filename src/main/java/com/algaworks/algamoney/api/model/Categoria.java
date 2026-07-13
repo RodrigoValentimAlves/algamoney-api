@@ -1,8 +1,12 @@
 package com.algaworks.algamoney.api.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 
 import java.util.Objects;
+
 
 @Entity
 @Table(name = "categoria")
@@ -20,6 +24,8 @@ public class Categoria {
         this.codigo = codigo;
     }
 
+    @NotNull
+    @Size(min=3, max = 20)
     private String nome;
 
     public String getNome() {
